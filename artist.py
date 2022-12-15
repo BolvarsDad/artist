@@ -47,14 +47,14 @@ while FLAG_EXIT == False:
                 artist_data     = json.loads(artist_request.text)
 
                 artist_name     = artist_data["artist"]["name"]
-                artist_members  = artist_data["artist"]["members"]
-                artist_genres   = artist_data["artist"]["genres"]
+                artist_members  = ', '.join(artist_data["artist"]["members"])
+                artist_genres   = ', '.join(artist_data["artist"]["genres"])
                 artist_years    = artist_data["artist"]["years_active"]
 
                 print("──────────────────────────────")
                 print("Artist name: \t", artist_name)
-                print("Members:     \t", *artist_members)
-                print("Genres:      \t", *artist_genres)
+                print("Members:     \t", artist_members)
+                print("Genres:      \t", artist_genres)
                 print("Years active:\t", *artist_years)
 
                 input("Press anything to continue")

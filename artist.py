@@ -76,4 +76,5 @@ while FLAG_EXIT == False:
         FLAG_EXIT = True
 
     else:
-        input("Invalid operation")
+        print("Invalid operation")
+        input("Press anything to continue")

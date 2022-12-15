@@ -39,17 +39,17 @@ while FLAG_EXIT == False:
 
     elif user_input == 'v':
         # The API updates their ID keys ~ every minute, this just updates the keys.
-        base_request = requests.get(base_url)
-        base_data = json.loads(base_request.text)
-        artists = base_data["artists"]
+        base_request    = requests.get(base_url)
+        base_data       = json.loads(base_request.text)
+        artists         = base_data["artists"]
 
         artist_name = input("Artist name > ")
 
         for artist in artists:
             if artist["name"] == artist_name:
-                artist_id       = artist["id"]
+                artist_id = artist["id"]
 
-                artist_url      = f"{base_url}/{artist_id}"
+                artist_url      = base_url + artist_id
                 artist_request  = requests.get(artist_url)
                 artist_data     = json.loads(artist_request.text)
 

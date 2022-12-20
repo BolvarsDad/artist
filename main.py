@@ -36,11 +36,11 @@ while not FLAG_EXIT:
             print(artist["name"])
 
     elif user_input == 'v':
-        base_request = requests.get(base_url)
-        base_data = json.loads(base_request.text)
-        artists = base_data["artists"]
-
         artist_name = input("Artist name > ")
+
+        base_request = requests.get(base_url)
+        base_data    = json.loads(base_request.text)
+        artists      = base_data["artists"]
 
         for artist in artists:
             if artist["name"] == artist_name:
